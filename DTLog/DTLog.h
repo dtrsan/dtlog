@@ -48,7 +48,7 @@ void setDTLogLevel(DTLogType level);
  * @param *format The message to log.
  */
 void DTLog__(const char *pretty_function,
-             uint32 line,
+             int line,
              DTLogType type,
              NSString *format,
              ...);

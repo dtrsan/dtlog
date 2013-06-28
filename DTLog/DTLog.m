@@ -42,7 +42,7 @@ static NSString* DTLogTypeString(DTLogType level) {
 }
 
 void DTLog__(const char *pretty_function,
-             uint32 line,
+             int line,
              DTLogType type,
              NSString *format,
              ...) {
