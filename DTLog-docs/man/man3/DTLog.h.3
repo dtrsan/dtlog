@@ -1,4 +1,4 @@
-.TH "DTLog.h" 3 "Fri Jun 28 2013" "Version v1.0" "DTLog" \" -*- nroff -*-
+.TH "DTLog.h" 3 "Fri Jun 28 2013" "Version v1.0.1" "DTLog" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -54,7 +54,7 @@ DTLog.h \-
 .RI "void \fBsetDTLogLevel\fP (\fBDTLogType\fP level)"
 .br
 .ti -1c
-.RI "void \fBDTLog__\fP (const char *pretty_function, uint32 line, \fBDTLogType\fP type, NSString *format,\&.\&.\&.)"
+.RI "void \fBDTLog__\fP (const char *pretty_function, int line, \fBDTLogType\fP type, NSString *format,\&.\&.\&.)"
 .br
 .ti -1c
 .RI "void \fBredirectStderrToFile\fP (NSString *file, BOOL append)"
@@ -68,39 +68,39 @@ DTLog.h \-
 .SS "#define DTLog(type, format, \&.\&.\&.)   \fBDTLog__\fP(__PRETTY_FUNCTION__, __LINE__, type, format, ##__VA_ARGS__)"
 Macro which simplifies calling DTLog__ logging function by automatically prepopulating with \fBPRETTY_FUNCTION\fP and \fBLINE\fP\&. 
 .PP
-Definition at line 60 of file DTLog\&.h\&.
+Definition at line 75 of file DTLog\&.h\&.
 .SS "#define DTLogCritical(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogCritical\fP, format, ##__VA_ARGS__)"
 Log a critical condition\&. 
 .PP
-Definition at line 65 of file DTLog\&.h\&.
+Definition at line 80 of file DTLog\&.h\&.
 .SS "#define DTLogDebug(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogDebug\fP, format, ##__VA_ARGS__)"
 Log a debug message\&. 
 .PP
-Definition at line 81 of file DTLog\&.h\&.
+Definition at line 96 of file DTLog\&.h\&.
 .SS "#define DTLogError(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogError\fP, format, ##__VA_ARGS__)"
 Log an error condition\&. 
 .PP
-Definition at line 69 of file DTLog\&.h\&.
+Definition at line 84 of file DTLog\&.h\&.
 .SS "#define DTLogInfo(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogInfo\fP, format, ##__VA_ARGS__)"
 Log an info message\&. 
 .PP
-Definition at line 77 of file DTLog\&.h\&.
+Definition at line 92 of file DTLog\&.h\&.
 .SS "#define DTLogMethodEnd   \fBDTLogInfo\fP(@'-- method end --', nil)"
 Macro to call right before when method/function will end\&. 
 .PP
-Definition at line 94 of file DTLog\&.h\&.
+Definition at line 109 of file DTLog\&.h\&.
 .SS "#define DTLogMethodStart   \fBDTLogInfo\fP(@'-- method start --', nil)"
 Macro to call right when method/function did start\&. 
 .PP
-Definition at line 90 of file DTLog\&.h\&.
+Definition at line 105 of file DTLog\&.h\&.
 .SS "#define DTLogVerbose(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogVerbose\fP, format, ##__VA_ARGS__)"
 Log a verbose message\&. 
 .PP
-Definition at line 85 of file DTLog\&.h\&.
+Definition at line 100 of file DTLog\&.h\&.
 .SS "#define DTLogWarning(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogWarning\fP, format, ##__VA_ARGS__)"
 Log a warning condition\&. 
 .PP
-Definition at line 73 of file DTLog\&.h\&.
+Definition at line 88 of file DTLog\&.h\&.
 .SH "Enumeration Type Documentation"
 .PP 
 .SS "enum \fBDTLogType\fP"
@@ -133,8 +133,23 @@ Everything else\&.
 Definition at line 18 of file DTLog\&.h\&.
 .SH "Function Documentation"
 .PP 
-.SS "void DTLog__ (const char *pretty_function, uint32line, \fBDTLogType\fPtype, NSString *format, \&.\&.\&.)"
-Generic logging function\&. 
+.SS "void DTLog__ (const char *pretty_function, intline, \fBDTLogType\fPtype, NSString *format, \&.\&.\&.)"
+Generic logging function\&. Function prints a message in the following format:
+.PP
+\fBLOG_TYPE\fP: TID \fBTHREAD_ID\fP(\fBIS_MAIN_THREAD\fP): \fBMETHOD_NAME\fP:\fBLINE_NUMBER\fP: \fBMESSAGE\fP
+.IP "\(bu" 2
+\fBLOG_TYPE\fP - String which describes type of a log message\&. It can be \fBCRITICAL\fP, \fBERROR\fP, \fBWARNING\fP, \fBINFO\fP, \fBDEBUG\fP or \fBVERBOSE\fP\&.
+.IP "\(bu" 2
+\fBTHREAD_ID\fP - Unique ID of a thread\&. (pthread_mach_thread_np(pthread_self()))
+.IP "\(bu" 2
+\fBIS_MAIN_THREAD\fP - \fBM\fP indicates that the message is logged from the main thread and \fBNM\fP that message is logged from background threads\&.
+.IP "\(bu" 2
+\fBMETHOD_NAME\fP - Method or function name from which a message is logged\&. Defined macros uses __PRETTY_FUNCTION__\&.
+.IP "\(bu" 2
+\fBLINE_NUMBER\fP - Line number of a file from which a message is logged\&. Defined macros uses __LINE__\&.
+.IP "\(bu" 2
+\fBMESSAGE\fP - A message to log\&.
+.PP
 .PP
 \fBParameters:\fP
 .RS 4

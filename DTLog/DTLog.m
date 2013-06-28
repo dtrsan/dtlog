@@ -2,7 +2,7 @@
  * DTLog.m
  * DTLog
  * @brief Simple logger for Objective-C
- * @version v1.0
+ * @version v1.0.1
  *
  * @author Domagoj Tršan
  * @date 6/23/13

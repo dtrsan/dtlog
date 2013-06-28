@@ -5,7 +5,7 @@
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{_d_t_log_8h_a59e62bc95e8199bbab087499f1fd4705}{D\-T\-Log}(type, format,...)~\hyperlink{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}{D\-T\-Log\-\_\-\-\_\-}(\-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, type, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)
+\#define \hyperlink{_d_t_log_8h_a59e62bc95e8199bbab087499f1fd4705}{D\-T\-Log}(type, format,...)~\hyperlink{_d_t_log_8m_abc33d9471f495e7d53bb917851940469}{D\-T\-Log\-\_\-\-\_\-}(\-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, type, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)
 \item 
 \#define \hyperlink{_d_t_log_8h_ad446351bbab0021d6637ddd07bb3fe66}{D\-T\-Log\-Critical}(format,...)~\hyperlink{_d_t_log_8h_a59e62bc95e8199bbab087499f1fd4705}{D\-T\-Log}(\hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056abf4a6343fd307ecc44a752b2f71e6a2c}{k\-Log\-Critical}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)
 \item 
@@ -42,7 +42,7 @@ enum \hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} 
 \item 
 void \hyperlink{_d_t_log_8h_aabf1ea728fdef150bc5b0e9186c8aa16}{set\-D\-T\-Log\-Level} (\hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} level)
 \item 
-void \hyperlink{_d_t_log_8h_a4828f7f66e84937e314be8db26539e2a}{D\-T\-Log\-\_\-\-\_\-} (const char $\ast$pretty\-\_\-function, uint32 line, \hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} type, N\-S\-String $\ast$format,...)
+void \hyperlink{_d_t_log_8h_abc33d9471f495e7d53bb917851940469}{D\-T\-Log\-\_\-\-\_\-} (const char $\ast$pretty\-\_\-function, int line, \hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} type, N\-S\-String $\ast$format,...)
 \item 
 void \hyperlink{_d_t_log_8h_a295c34bec3fc422b89d3fa3fe128815b}{redirect\-Stderr\-To\-File} (N\-S\-String $\ast$file, B\-O\-O\-L append)
 \item 
@@ -62,7 +62,7 @@ void \hyperlink{_d_t_log_8h_a3971d5d1cd6582bcfe010ce6e5a2edb2}{redirect\-Stdout\
 )~{\bf D\-T\-Log\-\_\-\-\_\-}(\-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-, \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-, type, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_a59e62bc95e8199bbab087499f1fd4705}
 Macro which simplifies calling D\-T\-Log\-\_\-\-\_\- logging function by automatically prepopulating with {\bfseries P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N} and {\bfseries L\-I\-N\-E}. 
 
-Definition at line 60 of file D\-T\-Log.\-h.
+Definition at line 75 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_ad446351bbab0021d6637ddd07bb3fe66}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Critical@{D\-T\-Log\-Critical}}
 \index{D\-T\-Log\-Critical@{D\-T\-Log\-Critical}!DTLog.h@{D\-T\-Log.\-h}}
@@ -74,7 +74,7 @@ Definition at line 60 of file D\-T\-Log.\-h.
 )~{\bf D\-T\-Log}({\bf k\-Log\-Critical}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_ad446351bbab0021d6637ddd07bb3fe66}
 Log a critical condition. 
 
-Definition at line 65 of file D\-T\-Log.\-h.
+Definition at line 80 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_af6c4619ec3c64fcb284e36d90f307fe1}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Debug@{D\-T\-Log\-Debug}}
 \index{D\-T\-Log\-Debug@{D\-T\-Log\-Debug}!DTLog.h@{D\-T\-Log.\-h}}
@@ -86,7 +86,7 @@ Definition at line 65 of file D\-T\-Log.\-h.
 )~{\bf D\-T\-Log}({\bf k\-Log\-Debug}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_af6c4619ec3c64fcb284e36d90f307fe1}
 Log a debug message. 
 
-Definition at line 81 of file D\-T\-Log.\-h.
+Definition at line 96 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_a0ca170dcaad88cde54a1e34121bcd4bb}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Error@{D\-T\-Log\-Error}}
 \index{D\-T\-Log\-Error@{D\-T\-Log\-Error}!DTLog.h@{D\-T\-Log.\-h}}
@@ -98,7 +98,7 @@ Definition at line 81 of file D\-T\-Log.\-h.
 )~{\bf D\-T\-Log}({\bf k\-Log\-Error}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_a0ca170dcaad88cde54a1e34121bcd4bb}
 Log an error condition. 
 
-Definition at line 69 of file D\-T\-Log.\-h.
+Definition at line 84 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_ae3d39153f490531b716dfc3adc941bb5}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Info@{D\-T\-Log\-Info}}
 \index{D\-T\-Log\-Info@{D\-T\-Log\-Info}!DTLog.h@{D\-T\-Log.\-h}}
@@ -110,21 +110,21 @@ Definition at line 69 of file D\-T\-Log.\-h.
 )~{\bf D\-T\-Log}({\bf k\-Log\-Info}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_ae3d39153f490531b716dfc3adc941bb5}
 Log an info message. 
 
-Definition at line 77 of file D\-T\-Log.\-h.
+Definition at line 92 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_afe919ac497c261bbfceb28c130179619}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Method\-End@{D\-T\-Log\-Method\-End}}
 \index{D\-T\-Log\-Method\-End@{D\-T\-Log\-Method\-End}!DTLog.h@{D\-T\-Log.\-h}}
 \subsubsection[{D\-T\-Log\-Method\-End}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-T\-Log\-Method\-End~{\bf D\-T\-Log\-Info}(@\char`\"{}-\/-\/ method end -\/-\/\char`\"{}, nil)}}\label{_d_t_log_8h_afe919ac497c261bbfceb28c130179619}
 Macro to call right before when method/function will end. 
 
-Definition at line 94 of file D\-T\-Log.\-h.
+Definition at line 109 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_a1443f172b9d1e1b946255cec803a0aad}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Method\-Start@{D\-T\-Log\-Method\-Start}}
 \index{D\-T\-Log\-Method\-Start@{D\-T\-Log\-Method\-Start}!DTLog.h@{D\-T\-Log.\-h}}
 \subsubsection[{D\-T\-Log\-Method\-Start}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\-T\-Log\-Method\-Start~{\bf D\-T\-Log\-Info}(@\char`\"{}-\/-\/ method start -\/-\/\char`\"{}, nil)}}\label{_d_t_log_8h_a1443f172b9d1e1b946255cec803a0aad}
 Macro to call right when method/function did start. 
 
-Definition at line 90 of file D\-T\-Log.\-h.
+Definition at line 105 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_ad5a6f0e2b696c158e1307669ac64dfc6}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Verbose@{D\-T\-Log\-Verbose}}
 \index{D\-T\-Log\-Verbose@{D\-T\-Log\-Verbose}!DTLog.h@{D\-T\-Log.\-h}}
@@ -136,7 +136,7 @@ Definition at line 90 of file D\-T\-Log.\-h.
 )~{\bf D\-T\-Log}({\bf k\-Log\-Verbose}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_ad5a6f0e2b696c158e1307669ac64dfc6}
 Log a verbose message. 
 
-Definition at line 85 of file D\-T\-Log.\-h.
+Definition at line 100 of file D\-T\-Log.\-h.
 
 \hypertarget{_d_t_log_8h_acfe6c4aad93cd12fdfadf8c8166674fe}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-Warning@{D\-T\-Log\-Warning}}
 \index{D\-T\-Log\-Warning@{D\-T\-Log\-Warning}!DTLog.h@{D\-T\-Log.\-h}}
@@ -148,7 +148,7 @@ Definition at line 85 of file D\-T\-Log.\-h.
 )~{\bf D\-T\-Log}({\bf k\-Log\-Warning}, format, \#\#\-\_\-\-\_\-\-V\-A\-\_\-\-A\-R\-G\-S\-\_\-\-\_\-)}}\label{_d_t_log_8h_acfe6c4aad93cd12fdfadf8c8166674fe}
 Log a warning condition. 
 
-Definition at line 73 of file D\-T\-Log.\-h.
+Definition at line 88 of file D\-T\-Log.\-h.
 
 
 
@@ -182,18 +182,30 @@ Definition at line 18 of file D\-T\-Log.\-h.
 
 
 \subsection{Function Documentation}
-\hypertarget{_d_t_log_8h_a4828f7f66e84937e314be8db26539e2a}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}}
+\hypertarget{_d_t_log_8h_abc33d9471f495e7d53bb917851940469}{\index{D\-T\-Log.\-h@{D\-T\-Log.\-h}!D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}}
 \index{D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}!DTLog.h@{D\-T\-Log.\-h}}
 \subsubsection[{D\-T\-Log\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}void D\-T\-Log\-\_\-\-\_\- (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{pretty\-\_\-function, }
-\item[{uint32}]{line, }
+\item[{int}]{line, }
 \item[{{\bf D\-T\-Log\-Type}}]{type, }
 \item[{N\-S\-String $\ast$}]{format, }
 \item[{}]{...}
 \end{DoxyParamCaption}
-)}}\label{_d_t_log_8h_a4828f7f66e84937e314be8db26539e2a}
-Generic logging function. 
+)}}\label{_d_t_log_8h_abc33d9471f495e7d53bb917851940469}
+Generic logging function. Function prints a message in the following format\-:
+
+{\bfseries L\-O\-G\-\_\-\-T\-Y\-P\-E}\-: T\-I\-D {\bfseries T\-H\-R\-E\-A\-D\-\_\-\-I\-D}({\bfseries I\-S\-\_\-\-M\-A\-I\-N\-\_\-\-T\-H\-R\-E\-A\-D})\-: {\bfseries M\-E\-T\-H\-O\-D\-\_\-\-N\-A\-M\-E}\-:{\bfseries L\-I\-N\-E\-\_\-\-N\-U\-M\-B\-E\-R}\-: {\bfseries M\-E\-S\-S\-A\-G\-E}
+\begin{DoxyItemize}
+\item {\bfseries L\-O\-G\-\_\-\-T\-Y\-P\-E} -\/ String which describes type of a log message. It can be {\bfseries C\-R\-I\-T\-I\-C\-A\-L}, {\bfseries E\-R\-R\-O\-R}, {\bfseries W\-A\-R\-N\-I\-N\-G}, {\bfseries I\-N\-F\-O}, {\bfseries D\-E\-B\-U\-G} or {\bfseries V\-E\-R\-B\-O\-S\-E}.
+\item {\bfseries T\-H\-R\-E\-A\-D\-\_\-\-I\-D} -\/ Unique I\-D of a thread. (pthread\-\_\-mach\-\_\-thread\-\_\-np(pthread\-\_\-self()))
+\item {\bfseries I\-S\-\_\-\-M\-A\-I\-N\-\_\-\-T\-H\-R\-E\-A\-D} -\/ {\bfseries M} indicates that the message is logged from the main thread and {\bfseries N\-M} that message is logged from background threads.
+\item {\bfseries M\-E\-T\-H\-O\-D\-\_\-\-N\-A\-M\-E} -\/ Method or function name from which a message is logged. Defined macros uses \-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-.
+\item {\bfseries L\-I\-N\-E\-\_\-\-N\-U\-M\-B\-E\-R} -\/ Line number of a file from which a message is logged. Defined macros uses \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-.
+\item {\bfseries M\-E\-S\-S\-A\-G\-E} -\/ A message to log.
+\end{DoxyItemize}
+
+
 \begin{DoxyParams}{Parameters}
 {\em $\ast$pretty\-\_\-function} & The name of the method/function from which the log function is called. \\
 \hline

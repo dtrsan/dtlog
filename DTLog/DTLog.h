@@ -2,7 +2,7 @@
  * DTLog.h
  * DTLog
  * @brief Simple logger for Objective-C
- * @version v1.0
+ * @version v1.0.1
  *
  * @author Domagoj Tršan 
  * @date 6/23/13
@@ -41,6 +41,21 @@ void setDTLogLevel(DTLogType level);
 
 /**
  * Generic logging function.
+ * Function prints a message in the following format:
+ *
+ * __LOG_TYPE__: TID __THREAD_ID__(__IS_MAIN_THREAD__): __METHOD_NAME__:__LINE_NUMBER__: __MESSAGE__
+ *
+ * - __LOG_TYPE__ - String which describes type of a log message. It can be
+ * __CRITICAL__, __ERROR__, __WARNING__, __INFO__, __DEBUG__ or __VERBOSE__.
+ * - __THREAD_ID__ - Unique ID of a thread. (pthread_mach_thread_np(pthread_self()))
+ * - __IS_MAIN_THREAD__ - __M__ indicates that the message is logged from the
+ * main thread and __NM__ that message is logged from background threads.
+ * - __METHOD_NAME__ - Method or function name from which a message is logged.
+ * Defined macros uses \__PRETTY_FUNCTION__.
+ * - __LINE_NUMBER__ - Line number of a file from which a message is logged.
+ * Defined macros uses \__LINE__.
+ * - __MESSAGE__ - A message to log.
+ *
  * @param *pretty_function The name of the method/function from which the log 
  * function is called.
  * @param line The line number inside file from which the loging method is called.

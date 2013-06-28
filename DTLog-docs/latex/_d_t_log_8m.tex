@@ -8,7 +8,7 @@
 \item 
 void \hyperlink{_d_t_log_8m_aabf1ea728fdef150bc5b0e9186c8aa16}{set\-D\-T\-Log\-Level} (\hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} level)
 \item 
-void \hyperlink{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}{D\-T\-Log\-\_\-\-\_\-} (const char $\ast$pretty\-\_\-function, uint32 line, \hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} type, N\-S\-String $\ast$format,...)
+void \hyperlink{_d_t_log_8m_abc33d9471f495e7d53bb917851940469}{D\-T\-Log\-\_\-\-\_\-} (const char $\ast$pretty\-\_\-function, int line, \hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} type, N\-S\-String $\ast$format,...)
 \item 
 void \hyperlink{_d_t_log_8m_a295c34bec3fc422b89d3fa3fe128815b}{redirect\-Stderr\-To\-File} (N\-S\-String $\ast$file, B\-O\-O\-L append)
 \item 
@@ -17,18 +17,30 @@ void \hyperlink{_d_t_log_8m_a3971d5d1cd6582bcfe010ce6e5a2edb2}{redirect\-Stdout\
 
 
 \subsection{Function Documentation}
-\hypertarget{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}{\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}!D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}}
+\hypertarget{_d_t_log_8m_abc33d9471f495e7d53bb917851940469}{\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}!D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}}
 \index{D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}!DTLog.m@{D\-T\-Log.\-m}}
 \subsubsection[{D\-T\-Log\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}void D\-T\-Log\-\_\-\-\_\- (
 \begin{DoxyParamCaption}
 \item[{const char $\ast$}]{pretty\-\_\-function, }
-\item[{uint32}]{line, }
+\item[{int}]{line, }
 \item[{{\bf D\-T\-Log\-Type}}]{type, }
 \item[{N\-S\-String $\ast$}]{format, }
 \item[{}]{...}
 \end{DoxyParamCaption}
-)}}\label{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}
-Generic logging function. 
+)}}\label{_d_t_log_8m_abc33d9471f495e7d53bb917851940469}
+Generic logging function. Function prints a message in the following format\-:
+
+{\bfseries L\-O\-G\-\_\-\-T\-Y\-P\-E}\-: T\-I\-D {\bfseries T\-H\-R\-E\-A\-D\-\_\-\-I\-D}({\bfseries I\-S\-\_\-\-M\-A\-I\-N\-\_\-\-T\-H\-R\-E\-A\-D})\-: {\bfseries M\-E\-T\-H\-O\-D\-\_\-\-N\-A\-M\-E}\-:{\bfseries L\-I\-N\-E\-\_\-\-N\-U\-M\-B\-E\-R}\-: {\bfseries M\-E\-S\-S\-A\-G\-E}
+\begin{DoxyItemize}
+\item {\bfseries L\-O\-G\-\_\-\-T\-Y\-P\-E} -\/ String which describes type of a log message. It can be {\bfseries C\-R\-I\-T\-I\-C\-A\-L}, {\bfseries E\-R\-R\-O\-R}, {\bfseries W\-A\-R\-N\-I\-N\-G}, {\bfseries I\-N\-F\-O}, {\bfseries D\-E\-B\-U\-G} or {\bfseries V\-E\-R\-B\-O\-S\-E}.
+\item {\bfseries T\-H\-R\-E\-A\-D\-\_\-\-I\-D} -\/ Unique I\-D of a thread. (pthread\-\_\-mach\-\_\-thread\-\_\-np(pthread\-\_\-self()))
+\item {\bfseries I\-S\-\_\-\-M\-A\-I\-N\-\_\-\-T\-H\-R\-E\-A\-D} -\/ {\bfseries M} indicates that the message is logged from the main thread and {\bfseries N\-M} that message is logged from background threads.
+\item {\bfseries M\-E\-T\-H\-O\-D\-\_\-\-N\-A\-M\-E} -\/ Method or function name from which a message is logged. Defined macros uses \-\_\-\-\_\-\-P\-R\-E\-T\-T\-Y\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-\_\-.
+\item {\bfseries L\-I\-N\-E\-\_\-\-N\-U\-M\-B\-E\-R} -\/ Line number of a file from which a message is logged. Defined macros uses \-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-.
+\item {\bfseries M\-E\-S\-S\-A\-G\-E} -\/ A message to log.
+\end{DoxyItemize}
+
+
 \begin{DoxyParams}{Parameters}
 {\em $\ast$pretty\-\_\-function} & The name of the method/function from which the log function is called. \\
 \hline

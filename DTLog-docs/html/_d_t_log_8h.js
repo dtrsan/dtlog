@@ -18,7 +18,7 @@ var _d_t_log_8h =
       [ "kLogDebug", "_d_t_log_8h.html#a26cc28d9fc305e96ba13a19dfa2ed056aef58ecbb72d63f22195c4b8d87154ae5", null ],
       [ "kLogVerbose", "_d_t_log_8h.html#a26cc28d9fc305e96ba13a19dfa2ed056ab4260ba8ce76ecffbe623a467ffb63bc", null ]
     ] ],
-    [ "DTLog__", "_d_t_log_8h.html#a4828f7f66e84937e314be8db26539e2a", null ],
+    [ "DTLog__", "_d_t_log_8h.html#abc33d9471f495e7d53bb917851940469", null ],
     [ "redirectStderrToFile", "_d_t_log_8h.html#a295c34bec3fc422b89d3fa3fe128815b", null ],
     [ "redirectStdoutToFile", "_d_t_log_8h.html#a3971d5d1cd6582bcfe010ce6e5a2edb2", null ],
     [ "setDTLogLevel", "_d_t_log_8h.html#aabf1ea728fdef150bc5b0e9186c8aa16", null ]
