@@ -1,0 +1,192 @@
+.TH "DTLog.h" 3 "Fri Jun 28 2013" "Version v1.0" "DTLog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTLog.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#import <Foundation/Foundation\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDTLog\fP(type, format,\&.\&.\&.)   \fBDTLog__\fP(__PRETTY_FUNCTION__, __LINE__, type, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogCritical\fP(format,\&.\&.\&.)   \fBDTLog\fP(\fBkLogCritical\fP, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogError\fP(format,\&.\&.\&.)   \fBDTLog\fP(\fBkLogError\fP, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogWarning\fP(format,\&.\&.\&.)   \fBDTLog\fP(\fBkLogWarning\fP, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogInfo\fP(format,\&.\&.\&.)   \fBDTLog\fP(\fBkLogInfo\fP, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogDebug\fP(format,\&.\&.\&.)   \fBDTLog\fP(\fBkLogDebug\fP, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogVerbose\fP(format,\&.\&.\&.)   \fBDTLog\fP(\fBkLogVerbose\fP, format, ##__VA_ARGS__)"
+.br
+.ti -1c
+.RI "#define \fBDTLogMethodStart\fP   \fBDTLogInfo\fP(@'-- method start --', nil)"
+.br
+.ti -1c
+.RI "#define \fBDTLogMethodEnd\fP   \fBDTLogInfo\fP(@'-- method end --', nil)"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDTLogType\fP { \fBkLogNone\fP, \fBkLogCritical\fP, \fBkLogError\fP, \fBkLogWarning\fP, \fBkLogInfo\fP, \fBkLogDebug\fP, \fBkLogVerbose\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetDTLogLevel\fP (\fBDTLogType\fP level)"
+.br
+.ti -1c
+.RI "void \fBDTLog__\fP (const char *pretty_function, uint32 line, \fBDTLogType\fP type, NSString *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBredirectStderrToFile\fP (NSString *file, BOOL append)"
+.br
+.ti -1c
+.RI "void \fBredirectStdoutToFile\fP (NSString *file, BOOL append)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DTLog(type, format, \&.\&.\&.)   \fBDTLog__\fP(__PRETTY_FUNCTION__, __LINE__, type, format, ##__VA_ARGS__)"
+Macro which simplifies calling DTLog__ logging function by automatically prepopulating with \fBPRETTY_FUNCTION\fP and \fBLINE\fP\&. 
+.PP
+Definition at line 60 of file DTLog\&.h\&.
+.SS "#define DTLogCritical(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogCritical\fP, format, ##__VA_ARGS__)"
+Log a critical condition\&. 
+.PP
+Definition at line 65 of file DTLog\&.h\&.
+.SS "#define DTLogDebug(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogDebug\fP, format, ##__VA_ARGS__)"
+Log a debug message\&. 
+.PP
+Definition at line 81 of file DTLog\&.h\&.
+.SS "#define DTLogError(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogError\fP, format, ##__VA_ARGS__)"
+Log an error condition\&. 
+.PP
+Definition at line 69 of file DTLog\&.h\&.
+.SS "#define DTLogInfo(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogInfo\fP, format, ##__VA_ARGS__)"
+Log an info message\&. 
+.PP
+Definition at line 77 of file DTLog\&.h\&.
+.SS "#define DTLogMethodEnd   \fBDTLogInfo\fP(@'-- method end --', nil)"
+Macro to call right before when method/function will end\&. 
+.PP
+Definition at line 94 of file DTLog\&.h\&.
+.SS "#define DTLogMethodStart   \fBDTLogInfo\fP(@'-- method start --', nil)"
+Macro to call right when method/function did start\&. 
+.PP
+Definition at line 90 of file DTLog\&.h\&.
+.SS "#define DTLogVerbose(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogVerbose\fP, format, ##__VA_ARGS__)"
+Log a verbose message\&. 
+.PP
+Definition at line 85 of file DTLog\&.h\&.
+.SS "#define DTLogWarning(format, \&.\&.\&.)   \fBDTLog\fP(\fBkLogWarning\fP, format, ##__VA_ARGS__)"
+Log a warning condition\&. 
+.PP
+Definition at line 73 of file DTLog\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBDTLogType\fP"
+Available logging levels 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIkLogNone \fP\fP
+Disables logging\&. 
+.TP
+\fB\fIkLogCritical \fP\fP
+Critical: logs critical conditions\&. If critical conditions occurs, the system is unusable\&. 
+.TP
+\fB\fIkLogError \fP\fP
+Error: logs error conditions\&. 
+.TP
+\fB\fIkLogWarning \fP\fP
+Warning: logs warning conditions\&. 
+.TP
+\fB\fIkLogInfo \fP\fP
+Informational: logs informational messages\&. 
+.TP
+\fB\fIkLogDebug \fP\fP
+Debug: logs debug messages\&. 
+.TP
+\fB\fIkLogVerbose \fP\fP
+Everything else\&. 
+.PP
+Definition at line 18 of file DTLog\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void DTLog__ (const char *pretty_function, uint32line, \fBDTLogType\fPtype, NSString *format, \&.\&.\&.)"
+Generic logging function\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*pretty_function\fP The name of the method/function from which the log function is called\&. 
+.br
+\fIline\fP The line number inside file from which the loging method is called\&. 
+.br
+\fItype\fP The type of a logging message\&. 
+.br
+\fI*format\fP The message to log\&. 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file DTLog\&.m\&.
+.SS "void redirectStderrToFile (NSString *file, BOOLappend)"
+Redirects stderr output to a file\&. If append is set to true, redirect is done with mode 'a' which will opens file for output at the end of a file\&. The file is created if it does not exist\&. If append is set to false, redirect is done with mode 'w' which will create an empty file for output operations\&. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP The file path\&. 
+.br
+\fIappend\fP If true output will be appended to the existing file, otherwise new file will be created and existing will be overwritten\&. 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file DTLog\&.m\&.
+.SS "void redirectStdoutToFile (NSString *file, BOOLappend)"
+Redirects stdout output to a file\&. If append is set to true, redirect is done with mode 'a' which will opens file for output at the end of a file\&. The file is created if it does not exist\&. If append is set to false, redirect is done with mode 'w' which will create an empty file for output operations\&. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP The file path\&. 
+.br
+\fIappend\fP If true output will be appended to the existing file, otherwise new file will be created and existing will be overwritten\&. 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file DTLog\&.m\&.
+.SS "void setDTLogLevel (\fBDTLogType\fPlevel)"
+Sets logging level 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTLogType\fP 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file DTLog\&.m\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTLog from the source code\&.

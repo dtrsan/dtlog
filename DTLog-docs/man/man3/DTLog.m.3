@@ -1,0 +1,88 @@
+.TH "DTLog.m" 3 "Fri Jun 28 2013" "Version v1.0" "DTLog" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTLog.m \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#import 'DTLog\&.h'\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetDTLogLevel\fP (\fBDTLogType\fP level)"
+.br
+.ti -1c
+.RI "void \fBDTLog__\fP (const char *pretty_function, uint32 line, \fBDTLogType\fP type, NSString *format,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "void \fBredirectStderrToFile\fP (NSString *file, BOOL append)"
+.br
+.ti -1c
+.RI "void \fBredirectStdoutToFile\fP (NSString *file, BOOL append)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void DTLog__ (const char *pretty_function, uint32line, \fBDTLogType\fPtype, NSString *format, \&.\&.\&.)"
+Generic logging function\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI*pretty_function\fP The name of the method/function from which the log function is called\&. 
+.br
+\fIline\fP The line number inside file from which the loging method is called\&. 
+.br
+\fItype\fP The type of a logging message\&. 
+.br
+\fI*format\fP The message to log\&. 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file DTLog\&.m\&.
+.SS "void redirectStderrToFile (NSString *file, BOOLappend)"
+Redirects stderr output to a file\&. If append is set to true, redirect is done with mode 'a' which will opens file for output at the end of a file\&. The file is created if it does not exist\&. If append is set to false, redirect is done with mode 'w' which will create an empty file for output operations\&. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP The file path\&. 
+.br
+\fIappend\fP If true output will be appended to the existing file, otherwise new file will be created and existing will be overwritten\&. 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file DTLog\&.m\&.
+.SS "void redirectStdoutToFile (NSString *file, BOOLappend)"
+Redirects stdout output to a file\&. If append is set to true, redirect is done with mode 'a' which will opens file for output at the end of a file\&. The file is created if it does not exist\&. If append is set to false, redirect is done with mode 'w' which will create an empty file for output operations\&. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP The file path\&. 
+.br
+\fIappend\fP If true output will be appended to the existing file, otherwise new file will be created and existing will be overwritten\&. 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file DTLog\&.m\&.
+.SS "void setDTLogLevel (\fBDTLogType\fPlevel)"
+Sets logging level 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTLogType\fP 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file DTLog\&.m\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTLog from the source code\&.

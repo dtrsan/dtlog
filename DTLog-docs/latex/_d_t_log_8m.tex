@@ -1,0 +1,97 @@
+\hypertarget{_d_t_log_8m}{\section{D\-T\-Log.\-m File Reference}
+\label{_d_t_log_8m}\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}}
+}
+{\ttfamily \#import \char`\"{}D\-T\-Log.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_d_t_log_8m_aabf1ea728fdef150bc5b0e9186c8aa16}{set\-D\-T\-Log\-Level} (\hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} level)
+\item 
+void \hyperlink{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}{D\-T\-Log\-\_\-\-\_\-} (const char $\ast$pretty\-\_\-function, uint32 line, \hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} type, N\-S\-String $\ast$format,...)
+\item 
+void \hyperlink{_d_t_log_8m_a295c34bec3fc422b89d3fa3fe128815b}{redirect\-Stderr\-To\-File} (N\-S\-String $\ast$file, B\-O\-O\-L append)
+\item 
+void \hyperlink{_d_t_log_8m_a3971d5d1cd6582bcfe010ce6e5a2edb2}{redirect\-Stdout\-To\-File} (N\-S\-String $\ast$file, B\-O\-O\-L append)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}{\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}!D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}}
+\index{D\-T\-Log\-\_\-\-\_\-@{D\-T\-Log\-\_\-\-\_\-}!DTLog.m@{D\-T\-Log.\-m}}
+\subsubsection[{D\-T\-Log\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}void D\-T\-Log\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{pretty\-\_\-function, }
+\item[{uint32}]{line, }
+\item[{{\bf D\-T\-Log\-Type}}]{type, }
+\item[{N\-S\-String $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}\label{_d_t_log_8m_a4828f7f66e84937e314be8db26539e2a}
+Generic logging function. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$pretty\-\_\-function} & The name of the method/function from which the log function is called. \\
+\hline
+{\em line} & The line number inside file from which the loging method is called. \\
+\hline
+{\em type} & The type of a logging message. \\
+\hline
+{\em $\ast$format} & The message to log. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 44 of file D\-T\-Log.\-m.
+
+\hypertarget{_d_t_log_8m_a295c34bec3fc422b89d3fa3fe128815b}{\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}!redirect\-Stderr\-To\-File@{redirect\-Stderr\-To\-File}}
+\index{redirect\-Stderr\-To\-File@{redirect\-Stderr\-To\-File}!DTLog.m@{D\-T\-Log.\-m}}
+\subsubsection[{redirect\-Stderr\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void redirect\-Stderr\-To\-File (
+\begin{DoxyParamCaption}
+\item[{N\-S\-String $\ast$}]{file, }
+\item[{B\-O\-O\-L}]{append}
+\end{DoxyParamCaption}
+)}}\label{_d_t_log_8m_a295c34bec3fc422b89d3fa3fe128815b}
+Redirects stderr output to a file. If append is set to true, redirect is done with mode \char`\"{}a\char`\"{} which will opens file for output at the end of a file. The file is created if it does not exist. If append is set to false, redirect is done with mode \char`\"{}w\char`\"{} which will create an empty file for output operations. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file. 
+\begin{DoxyParams}{Parameters}
+{\em file} & The file path. \\
+\hline
+{\em append} & If true output will be appended to the existing file, otherwise new file will be created and existing will be overwritten. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file D\-T\-Log.\-m.
+
+\hypertarget{_d_t_log_8m_a3971d5d1cd6582bcfe010ce6e5a2edb2}{\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}!redirect\-Stdout\-To\-File@{redirect\-Stdout\-To\-File}}
+\index{redirect\-Stdout\-To\-File@{redirect\-Stdout\-To\-File}!DTLog.m@{D\-T\-Log.\-m}}
+\subsubsection[{redirect\-Stdout\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}void redirect\-Stdout\-To\-File (
+\begin{DoxyParamCaption}
+\item[{N\-S\-String $\ast$}]{file, }
+\item[{B\-O\-O\-L}]{append}
+\end{DoxyParamCaption}
+)}}\label{_d_t_log_8m_a3971d5d1cd6582bcfe010ce6e5a2edb2}
+Redirects stdout output to a file. If append is set to true, redirect is done with mode \char`\"{}a\char`\"{} which will opens file for output at the end of a file. The file is created if it does not exist. If append is set to false, redirect is done with mode \char`\"{}w\char`\"{} which will create an empty file for output operations. If a file with the same name already exists, its contents are discarded and the file is treated as a new empty file. 
+\begin{DoxyParams}{Parameters}
+{\em file} & The file path. \\
+\hline
+{\em append} & If true output will be appended to the existing file, otherwise new file will be created and existing will be overwritten. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file D\-T\-Log.\-m.
+
+\hypertarget{_d_t_log_8m_aabf1ea728fdef150bc5b0e9186c8aa16}{\index{D\-T\-Log.\-m@{D\-T\-Log.\-m}!set\-D\-T\-Log\-Level@{set\-D\-T\-Log\-Level}}
+\index{set\-D\-T\-Log\-Level@{set\-D\-T\-Log\-Level}!DTLog.m@{D\-T\-Log.\-m}}
+\subsubsection[{set\-D\-T\-Log\-Level}]{\setlength{\rightskip}{0pt plus 5cm}void set\-D\-T\-Log\-Level (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-T\-Log\-Type}}]{level}
+\end{DoxyParamCaption}
+)}}\label{_d_t_log_8m_aabf1ea728fdef150bc5b0e9186c8aa16}
+Sets logging level \begin{DoxySeeAlso}{See Also}
+\hyperlink{_d_t_log_8h_a26cc28d9fc305e96ba13a19dfa2ed056}{D\-T\-Log\-Type} 
+\end{DoxySeeAlso}
+
+
+Definition at line 18 of file D\-T\-Log.\-m.
+
